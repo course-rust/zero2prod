@@ -40,11 +40,11 @@ jobs:
       - name: Rust cache cleanup
         uses: Swatinem/rust-cache@v2
         with:
-          key: sqlx-${{env.SQLX_VERSION}}
+          key: sqlx-${{ env.SQLX_VERSION }}
       - name: Install slqx-client
         run: cargo install sqlx-cli
-          --version={{env.SQLX_VERSION}}
-          --features ${{env.SQLX_FEATURES}}
+          --version=${{ env.SQLX_VERSION }}
+          --features ${{ env.SQLX_FEATURES }}
           --no-default-features
           --locked
       - name: Install postgresql-client
@@ -84,11 +84,11 @@ jobs:
           components: clippy
       - uses: Swatinem/rust-cache@v2
         with:
-          key: sqlx-${{env.SQLX_VERSION}}
+          key: sqlx-${{ env.SQLX_VERSION }}
       - name: Install sqlx-client
         run: cargo install sqlx-cli
-          --version={{env.SQLX_VERSION}}
-          --features ${{env.SQLX_FEATURES}}
+          --version=${{ env.SQLX_VERSION }}
+          --features ${{ env.SQLX_FEATURES }}
           --no-default-features
           --locked
       - name: Install postgresql-client
